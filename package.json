@@ -1,0 +1,105 @@
+{
+  "name": "@rross_llc/api-service-pack",
+  "version": "0.1.0",
+  "description": "Shared services for API's",
+  "main": "dist/index.js",
+  "types": "dist/types/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dest",
+    "test": "jest --passWithNoTests",
+    "test:ci": "CI=true jest --env=jsdom --coverage --passWithNoTests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reggieross/api-service-pack.git"
+  },
+  "author": "Reginald Ross",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reggieross/api-service-pack/issues"
+  },
+  "homepage": "https://github.com/reggieross/api-service-pack#readme",
+  "dependencies": {
+    "@types/js-cookie": "^2.2.6",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/lodash": "^4.14.151",
+    "babel-loader": "^8.1.0",
+    "husky": "^4.2.5",
+    "jest": "^25.5.4",
+    "jest-fetch-mock": "^3.0.3",
+    "js-cookie": "^2.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "memoize-one": "^5.1.1",
+    "node-fetch": "^2.6.0",
+    "prettier": "^2.0.5",
+    "ts-loader": "^7.0.2",
+    "typescript": "^3.8.3",
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@types/node-fetch": "^2.5.7",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.20.2",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "ts-jest": "^25.4.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/client/**/*.ts",
+      "src/service/**/*.ts",
+      "src/utils/**/*.ts",
+      "!**/index.ts"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/*.{spec,test}.ts"
+    ],
+    "testEnvironment": "jsdom",
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|ts|tsx)$",
+      "^.+\\.module\\.(css|sass|scss)$"
+    ],
+    "modulePaths": [],
+    "moduleFileExtensions": [
+      "web.js",
+      "js",
+      "web.ts",
+      "ts",
+      "web.tsx",
+      "tsx",
+      "json",
+      "web.jsx",
+      "jsx",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__mocks__/fileMock.js",
+      "\\.(scss|css|less)$": "<rootDir>/src/__mocks__/styleMock.js"
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 2
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run build"
+    }
+  }
+}
