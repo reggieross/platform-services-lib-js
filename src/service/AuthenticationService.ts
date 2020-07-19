@@ -16,7 +16,7 @@ export type LoginResp =
     };
 
 export interface ValidateTokenResponse {
-  isValid: boolean;
+  valid: boolean;
   user?: UserInfo;
 }
 
