@@ -38,9 +38,8 @@ const validateToken = async (
   accessToken: string,
   decodeAfterValidations: boolean = false
 ): Promise<ValidateTokenResponse> => {
-  const res = await HttpClient.post(
+  const res = await HttpClient.get(
     `${authServiceURI}/token/validate?decode=${decodeAfterValidations}`,
-    {},
     `access_token=${accessToken}`
   );
   return res.responseObj as ValidateTokenResponse;
