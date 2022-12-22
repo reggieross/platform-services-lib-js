@@ -34,7 +34,7 @@
     "jest": "^25.5.4",
     "jest-fetch-mock": "^3.0.3",
     "js-cookie": "^2.2.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.21",
     "memoize-one": "^5.1.1",
     "node-fetch": "^2.6.1",
